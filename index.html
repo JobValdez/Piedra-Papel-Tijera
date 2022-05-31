@@ -10,34 +10,56 @@
     <body>
         
         <div class="main-container">
-            <div>
-                <h1>Rock Papel Sissors</h1>
+            <header>
+                <h1>Rock Papel Scissors</h1><br>
                 <h3>It's time to play - Choose an Option</h3>
+            </header>
+            
+            <div class="user-machine-side">
+                <h3>Player</h3>
+                <h3>Computer</h3>
             </div>
+            <div class="battle">
+                <img class="player" id="player-selection" src="img/rock.png" alt="rock">
 
-            <img class="machine" id="machine-selection" src="img/rock.jpg" alt="rock">
+                <div class="board">
+                    <div class="result-tittles">
+                        <h5>Wins</h5>
+                        <h5>Draws</h5>
+                        <h5>Losses</h5>
+                    </div>
+                    <div class="pointscontainer">
+                        <input id="winners" class="game-results" type="number" value= "0" disabled>
+                        <input id="tieds" class="game-results" type="number" value= "0" disabled>
+                        <input id="losses" class="game-results" type="number" value= "0" disabled>
+                    </div>    
+                </div>
+
+                <img class="machine" id="machine-selection" src="img/rock.png" alt="rock">
+            </div>    
 
             <div id="result-text">
-                Vamos
+                    Let's go!
             </div>
 
-            <img class="player" id="player-selection" src="img/rock.jpg" alt="rock">
+            <div class="gameOverMessage" id="Winnermessage">
+                <p>Congratulation you are the winner! Te gustaria empezar de nuevo?</p>
+                <button onclick="reload">Yes</button>
+                <button onclick="notreload">No</button>
+            </div>
 
             <div class="button-container">
                 <button type="button" id="rock">
-                    <img src="img/rock.jpg" alt="Una Roca">
+                    <img src="img/rock.png" alt="Una Roca">
                 </button>
                 <button type="button" id="papel">
-                    <img src="img/papel.jpg" alt="Un Papel">
+                    <img src="img/papel.png" alt="Un Papel">
                 </button>   
                 <button type="button" id="scissors">
-                    <img src="img/scissors.jpg" alt="Una Tijera">
+                    <img src="img/scissors.png" alt="Una Tijera">
                 </button>
             </div> 
 
-            <div id="result">
-                The winner is:
-            </div>
         </div>
         <script src="js/javascript.js"></script>
     </body>

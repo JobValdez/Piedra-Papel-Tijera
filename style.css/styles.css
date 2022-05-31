@@ -1,14 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-image: url(../img/backg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+header {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-machine-side {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 8vw;
+    margin-right:8vw;
+}
+
+.user-machine-side h3{
+    font-size: 5vw;
+}
+
+.battle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.game-results {
+    width: 4vw;
+    height: 4vw;
+    margin: 15px;
+    background-color: black;
+    color: yellow;
+    font-family:'.player';
+    font-size: 4vw;
+    text-align: center;
+    border:3px solid yellow;
+    border-style: dashed;
+    margin-top: 0;
+}
+
+.result-tittles{
+    display: flex;
+    flex-direction: row;
+    width: 4vw;
+    height: 4vw;
+    margin: 15px;
+    margin-bottom: 0;
+}
+
+.result-tittles h5{
+    font-size: 2vw;
+    margin-right: 15px;
+}
+
+#result-text{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 3vw;
+
+}
+
 .button-container {
     display: flex;
     flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
 .button-container button {
-    margin: 10px;
+    margin: 40px;
     padding: 0;
     width: 20vh;
     height: 20vh;
-    border: 2px solid #000000;
+    background-color: black;
+    border:5px solid yellow;
+    border-style: dashed;
 }
 
 .button-container button img{
@@ -22,6 +104,31 @@
 }
 
 .player, .machine {
-    width: 20vh;
-    height: 20vh;
+    width: 40vh;
+    height: 40vh;
+}
+
+.machine {
+    transform: rotateY(180deg);
+}
+
+.gameOverMessage {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px solid #009020;
+    box-shadow: 1px 1px 0px 0px #313030;
+    border: #000000 solid 2px;
+    padding: 10px;
+    text-align: center;
+    display:none;
+}
+
+.gameOverMessage button {
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
 }
