@@ -2,12 +2,15 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    color: #FFF;
 }
 
 body {
-    background-image: url(../img/backg.jpg);
+    background-image: url(../img/istockphoto-1191658515-170667a.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    margin-top: 10px;
+    background-color: #6278c2;
 }
 
 .main-container {
@@ -15,11 +18,13 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
+    margin-top: 20px;
 }
 
 header {
     margin-left: auto;
     margin-right: auto;
+    font-size: 2.5vh;
 }
 
 .user-machine-side {
@@ -44,8 +49,8 @@ header {
     width: 4vw;
     height: 4vw;
     margin: 15px;
-    background-color: black;
-    color: yellow;
+    background-color: #d4d1d19a;
+    color: rgb(255, 255, 255);
     font-family:'.player';
     font-size: 4vw;
     text-align: center;
@@ -72,7 +77,8 @@ header {
     margin-left: auto;
     margin-right: auto;
     font-size: 3vw;
-
+    margin-bottom: 20px;
+    color: #FFF;
 }
 
 .button-container {
@@ -80,7 +86,6 @@ header {
     flex-direction: row;
     margin-left: auto;
     margin-right: auto;
-    
 }
 
 .button-container button {
@@ -88,7 +93,7 @@ header {
     padding: 0;
     width: 20vh;
     height: 20vh;
-    background-color: black;
+    background-color: rgb(194, 176, 176);
     border:5px solid yellow;
     border-style: dashed;
 }
@@ -100,11 +105,12 @@ header {
 }
 
 .button-container button:hover{
-    border: 4px solid #94cfc7;
+    border: 4px solid #fcf4a5;
+    border-style: dashed;
 }
 
 .player, .machine {
-    width: 40vh;
+    width: 35vw;
     height: 40vh;
 }
 
@@ -115,20 +121,66 @@ header {
 .gameOverMessage {
     margin-left: auto;
     margin-right: auto;
-    border-radius: 20px solid #009020;
-    box-shadow: 1px 1px 0px 0px #313030;
-    border: #000000 solid 2px;
     padding: 10px;
     text-align: center;
     display:none;
+    max-height: 20%;
+    height: 20vh;
+    margin-bottom: 20px;
+    font-size: 2.5vw;
+    color: #FFF;
 }
 
 .gameOverMessage button {
     margin-top: 15px;
     margin-left: 10px;
+
 }
 
 .board {
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.yes-no{
+    background:#7726fa;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:0.8em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+}
+.yes-no:hover{
+    background:#fff;
+    color:#1AAB8A;
+}
+
+#noReloadOnLossing:hover, #noReloadOnDrawing:hover, #noReload:hover {
+    background:rgb(255, 1, 1);
+    color:#FFF;
+}
+.yes-no:before,.yes-no:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #7726fa;
+    transition:400ms ease all;
+}
+.yes-no:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+.yes-no:hover:before,.yes-no:hover:after{
+    width:100%;
+    transition:800ms ease all;
 }

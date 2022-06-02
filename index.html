@@ -43,20 +43,34 @@
             </div>
 
             <div class="gameOverMessage" id="Winnermessage">
-                <p>Congratulation you are the winner! Te gustaria empezar de nuevo?</p>
-                <button onclick="reload">Yes</button>
-                <button onclick="notreload">No</button>
+                <p>Congratulation you are the winner! Would you like to play again?</p>
+                <button onclick="location.reload()" class="yes-no">Yes</button>
+                <button id="noReload" class="yes-no">No</button>
             </div>
 
-            <div class="button-container">
+            <div class="gameOverMessage" id="losserMessage">
+                <p>Game Over. You lost 3 times! Would you like to try again?</p>
+                <div class="wrapper">
+                    <button onclick="location.reload()" class="yes-no">Yes</button>
+                    <button id="noReloadOnLossing" class="yes-no">No</button>
+                </div>
+            </div>
+
+            <div class="gameOverMessage" id="drawMessage">
+                <p>It is a tie. You and the machine are thinking the same thing. Try again.!</p>
+                <button onclick="location.reload()" class="yes-no">Yes</button>
+                <button id="noReloadOnDrawing" class="yes-no">No</button>
+            </div>
+
+            <div class="button-container" id="button-Container">
                 <button type="button" id="rock">
-                    <img src="img/rock.png" alt="Una Roca">
+                    <img src="img/rock.png" alt="A Rock">
                 </button>
                 <button type="button" id="papel">
-                    <img src="img/papel.png" alt="Un Papel">
+                    <img src="img/papel.png" alt="A Paper">
                 </button>   
                 <button type="button" id="scissors">
-                    <img src="img/scissors.png" alt="Una Tijera">
+                    <img src="img/scissors.png" alt="A Scissors">
                 </button>
             </div> 
 

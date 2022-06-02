@@ -16,6 +16,9 @@ const winners = document.getElementById("winners");
 const tieds = document.getElementById("tieds");
 const losses = document.getElementById("losses");
 
+const winnerSound = new Audio ("sounds/victory.wav");
+const lossingSound = new Audio ("sounds/lossing.wav");
+const drawSound =new Audio("sounds/draw.wav");
 
 rockBtn.addEventListener ("click", ()=> {
     play(ROCK);
@@ -54,12 +57,16 @@ function play (userOption){
                 resultText.innerHTML = "Tied"
                 tieds.value = ++tieds.value;
 
-                if(tieds.value == 5) {
-                    resultText.innerHTML = "I am sorry, you and the computer are too good that the game have finished as Draw";
-                    winners.value = 0;
-                    losses.value = 0;
-                    tieds.value = 0;
-                    console.log(tieds.value);
+                if(tieds.value == 1) {
+                    let drawMessage = document.getElementById("drawMessage");
+                    drawMessage.style.display = 'block';
+                    document.getElementById("button-Container").style.display = 'none';
+                    drawSound.play();
+
+                    let noReload = document.getElementById("noReloadOnDrawing");
+                    noReload.addEventListener('click', function(){
+                        drawMessage.style.display = 'none';
+                    });
                 }
                 break;
 
@@ -67,14 +74,16 @@ function play (userOption){
                 resultText.innerHTML = "You Won"
                 winners.value = ++winners.value;
 
-                if(winners.value == 5) {
-                    resultText.innerHTML = "Congratulation you have beated the computer 5 times - The game is over";
-                    let win = document.getElementsByClassName('gameOverMessage');
-                    win.style.display= 'block';
-                    winners.value = 0;
-                    losses.value = 0;
-                    tieds.value = 0;
-                    console.log(winners.value);
+                if(winners.value == 1) {
+                    let WinnerMessage = document.getElementById("Winnermessage");
+                    WinnerMessage.style.display = 'block';
+                    document.getElementById("button-Container").style.display = 'none';
+                    winnerSound.play();
+
+                    let noReload = document.getElementById("noReload");
+                    noReload.addEventListener('click', function(){
+                        WinnerMessage.style.display = 'none';
+                    });
                 }
                 break;
 
@@ -82,12 +91,17 @@ function play (userOption){
                 resultText.innerHTML = "You Lost"
                 losses.value = ++losses.value;
 
-                if(losses.value == 3) {
-                    resultText.innerHTML = "I am sorry you have lost 3 times - Game over";
-                    losses.value = 0;
-                    winners.value = 0;
-                    tieds.value = 0;
-                    console.log(losses.value);
+                if(losses.value == 1) {
+                    let losserMessage = document.getElementById("losserMessage");
+                    losserMessage.style.display = 'block';
+                    document.getElementById("button-Container").style.display = 'none';
+                    lossingSound.play();
+
+                    const noReload = document.getElementById("noReloadOnLossing");
+
+                    noReload.addEventListener('click', function(){
+                        losserMessage.style.display = 'none';
+                    });
                 }
 
                 break;
