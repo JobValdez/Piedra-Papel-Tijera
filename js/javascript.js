@@ -57,7 +57,7 @@ function play (userOption){
                 resultText.innerHTML = "Tied"
                 tieds.value = ++tieds.value;
 
-                if(tieds.value == 1) {
+                if(tieds.value == 5) {
                     let drawMessage = document.getElementById("drawMessage");
                     drawMessage.style.display = 'block';
                     document.getElementById("button-Container").style.display = 'none';
@@ -74,7 +74,7 @@ function play (userOption){
                 resultText.innerHTML = "You Won"
                 winners.value = ++winners.value;
 
-                if(winners.value == 1) {
+                if(winners.value == 3) {
                     let WinnerMessage = document.getElementById("Winnermessage");
                     WinnerMessage.style.display = 'block';
                     document.getElementById("button-Container").style.display = 'none';
@@ -91,7 +91,7 @@ function play (userOption){
                 resultText.innerHTML = "You Lost"
                 losses.value = ++losses.value;
 
-                if(losses.value == 1) {
+                if(losses.value == 3) {
                     let losserMessage = document.getElementById("losserMessage");
                     losserMessage.style.display = 'block';
                     document.getElementById("button-Container").style.display = 'none';
